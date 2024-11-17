@@ -3,7 +3,7 @@ name: air-quality-daily-with-lags
 on:
   workflow_dispatch:
     schedule:
-    - cron: '11 6 * * *'
+    - cron: '51 6 * * *'
 
 jobs:
   schedule_pipelines:
@@ -33,7 +33,6 @@ jobs:
           HOPSWORKS_API_KEY: ${{ secrets.HOPSWORKS_API_KEY }}
         run: |
           cd notebooks/ch03
-          jupyter nbconvert --to notebook --execute 2_air_quality_feature_pipeline_with_lags.ipynb
           jupyter nbconvert --to notebook --execute 4_air_quality_batch_inference_with_lags.ipynb
 
       - name: github pages publish
