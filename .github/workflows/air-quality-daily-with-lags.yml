@@ -1,9 +1,9 @@
 name: air-quality-daily-with-lags
 
 on:
-  workflow_dispatch:
-    schedule:
+  schedule:
     - cron: '51 6 * * *'
+  workflow_dispatch:
 
 jobs:
   schedule_pipelines:
